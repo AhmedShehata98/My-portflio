@@ -1,5 +1,5 @@
 // Start Deffine variables
-let apiurl = 'https://ahmedshehata98.github.io/My-Portfolio/projects.json';
+let apiurl = '../../projects.json';
 // 
 
 // Assistant variables
