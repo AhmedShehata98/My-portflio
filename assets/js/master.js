@@ -1,5 +1,5 @@
 // Start Deffine variables
-let apiurl = '../../projects.json';
+let apiurl = 'https://ahmedshehata98.github.io/My-Portfolio/projects.json';
 
 // Assistant variables
 let apiProjectLength ;
@@ -131,7 +131,13 @@ function searchForActiveAndRemove(){
 
 
 async function fetchProjectsList(api){
-    const response = await fetch(api);
+    const response = await fetch(api,{
+        headers:{
+            'Content-Type':'application/json',
+        },
+        method:'GET',
+
+    });
     const data     = await response.json();
 
     
@@ -149,10 +155,8 @@ async function fetchProjectsList(api){
 
 
 function innerHtmlElementOnPage(Data){
-    // innerProjectLocation.innerHTML= '';
 
     for(let i=0 ; i < Data.length ;i++){
-        console.log(Data[i]);
 
         const projectBox   = document.createElement('article');
         const projectImg   = document.createElement('div');
