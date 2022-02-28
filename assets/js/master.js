@@ -1,6 +1,6 @@
 // Start Deffine variables
 let apiurl = '../../projects.json';
-// 
+
 
 // Assistant variables
 let apiProjectLength ;
