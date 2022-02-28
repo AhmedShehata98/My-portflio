@@ -1,11 +1,10 @@
 // Start Deffine variables
-let apiurl = 'https://ahmedshehata98.github.io/My-Portfolio/projects.json';
+let apiurl = '../../projects.json';
 
 // Assistant variables
 let apiProjectLength ;
 let classCount = 4;
 let loadAnimationindex=0;
-let apiConnected = false;
 // end Assistant variables
 
 
@@ -136,11 +135,12 @@ async function fetchProjectsList(api){
     const data     = await response.json();
 
     
-    console.log(response.status);
+
     apiProjectLength = data.length;
     innerHtmlElementOnPage(data);
-    
-    if (response.statusText === 'OK' && response.status === 200) {
+
+    // remove loading overlay if connection is successed
+    if (response.status === 200) {
         setTimeout(() => {
             loadingOverlay.remove();
         }, 1500);
