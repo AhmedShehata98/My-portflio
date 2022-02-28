@@ -3,7 +3,6 @@ let apiurl = 'https://github.com/AhmedShehata98/My-Portfolio/blob/4adde531b81dc9
 
 
 // Assistant variables
-let apiProjectLength ;
 let classCount = 4;
 let loadAnimationindex=0;
 // end Assistant variables
@@ -14,10 +13,8 @@ logoText        = document.querySelector('#logoText'),
 sideListItem    = document.querySelectorAll('#navbar li'),
 togglerButton = document.querySelector('#togglerBTN'),
 innerProjectLocation = document.querySelector('#InnerLocation'),
-showMoreBTN = document.querySelector('#showMoreBTN');
+showMoreBTN = document.querySelector('#showMoreBTN'),
 scrollToTopBTN = document.querySelector('.scrollToTop');
-loadingOverlay = document.querySelector('#loadingOverlay');
-loadingOverlayIndicator = document.querySelectorAll('#loadingOverlay ul li');
 // End Deffine variables
 
 
@@ -28,11 +25,13 @@ togglerButton.addEventListener('click',()=>{
 })
 // End all Events Lisiners 
 window.addEventListener('load',()=>{
-    loadAnimation();
     sideListItem[0].classList.add('active');
-    fetchProjectsList(apiurl);
     CheckForPageDir();
-
+    innerHtmlElementOnPage();
+    // 
+    document.querySelector('.welcomeheading >:last-child').style.transform= 'translateY(0)';
+    document.querySelector('.welcomeheading >:last-child').style.opacity= '1';
+    // 
 })
 
 window.addEventListener('resize',()=>{
@@ -51,9 +50,15 @@ window.addEventListener('scroll',()=>{
     if(window.scrollY >= 404){
         searchForActiveAndRemove();
 
+
+        // Start to disable fade animation
+        document.querySelector('.myInformationCard').style.transform= 'translateY(0)';
+        document.querySelector('.myInformationCard').style.opacity= '1';
+        document.querySelector('.skillsList').style.transform= 'translateY(0)';
+        document.querySelector('.skillsList').style.opacity= '1';
+        // 
         logoText.textContent= 'about';
         sideListItem[1].classList.add('active');
-
         scrollToTopBTN.classList.add('visable-scroll-btn')
     }else{
         scrollToTopBTN.classList.remove('visable-scroll-btn')
@@ -62,6 +67,18 @@ window.addEventListener('scroll',()=>{
 
     if (window.scrollY >= 1021) {
         searchForActiveAndRemove();
+
+
+        // Start to disable fade animation
+        document.querySelector('.servicesList >:first-child').style.transform= 'translateY(0)';
+        document.querySelector('.servicesList >:first-child').style.opacity= '1';
+
+        document.querySelector('.servicesList >:nth-child(2)').style.transform= 'translateY(0)';
+        document.querySelector('.servicesList >:nth-child(2)').style.opacity= '1';
+        
+        document.querySelector('.servicesList >:last-child').style.transform= 'translateY(0)';
+        document.querySelector('.servicesList >:last-child').style.opacity= '1';
+        // 
         logoText.textContent= 'services';
         sideListItem[2].classList.add('active');
     }
@@ -72,18 +89,24 @@ window.addEventListener('scroll',()=>{
     }
     if (window.scrollY >= 2269) {
         searchForActiveAndRemove();
+
+        // Start to disable fade animation
+        document.querySelector('.mainCard').style.transform= 'translateY(0)';
+        document.querySelector('.mainCard').style.opacity= '1';
+        // 
         logoText.textContent= 'contacts';
         sideListItem[4].classList.add('active');
     }
 })
 
 showMoreBTN.addEventListener('click',()=>{
-    if (classCount >= apiProjectLength) {
-        classCount = apiProjectLength;
+    if(classCount >= projectsList.length){
+        showMoreBTN.classList.add('disabledBTN');
+
     }else{
         classCount+=3
+        visableElements();
     }
-    visableElements();
 })
 
 scrollToTopBTN.addEventListener('click',()=>{
@@ -131,33 +154,13 @@ function searchForActiveAndRemove(){
 }
 
 
-async function fetchProjectsList(api){
-    const response = await fetch(api,{
-        headers:{
-            'Content-Type':'application/json',
-        },
-        method:'GET',
 
-    });
-    const data     = await response.json();
+
+function innerHtmlElementOnPage(){
 
     
 
-    apiProjectLength = data.length;
-    innerHtmlElementOnPage(data);
-
-    // remove loading overlay if connection is successed
-    if (response.status === 200) {
-        setTimeout(() => {
-            loadingOverlay.remove();
-        }, 1500);
-    }
-}
-
-
-function innerHtmlElementOnPage(Data){
-
-    for(let i=0 ; i < Data.length ;i++){
+    for(let i=0 ; i < projectsList.length ;i++){
 
         const projectBox   = document.createElement('article');
         const projectImg   = document.createElement('div');
@@ -170,16 +173,16 @@ function innerHtmlElementOnPage(Data){
         projectBox.appendChild(projectImg);
         projectImg.appendChild(imagePreview);
         projectBox.appendChild(projectTitle);
-        projectTitle.appendChild(document.createTextNode(Data[i].projectName));
+        projectTitle.appendChild(document.createTextNode(projectsList[i].projectName));
         projectBox.appendChild(projectLinks);
         projectLinks.appendChild(repoLink);
         projectLinks.appendChild(liveDemoLink);
         repoLink.appendChild(document.createTextNode('Repository'));
         liveDemoLink.appendChild(document.createTextNode('Live Demo'));
 
-        liveDemoLink.href= Data[i].liveDemoLink;
-        repoLink.href    = Data[i].repoLink;
-        imagePreview.src = Data[i].projectImg;
+        liveDemoLink.href= projectsList[i].liveDemoLink;
+        repoLink.href    = projectsList[i].repoLink;
+        imagePreview.src = projectsList[i].projectImg;
         imagePreview.alt = 'project #' + [i+1];
 
 
@@ -220,21 +223,23 @@ function CheckForPageDir(){
     }
 }
 
-function loadAnimation(){
-    setInterval(()=>{
-        loadingOverlayIndicator.forEach(indicator =>{
+// loadingOverlay disabled now
+
+// function loadAnimation(){
+//     setInterval(()=>{
+//         loadingOverlayIndicator.forEach(indicator =>{
             
-            if(indicator.classList.contains('load')){
-                indicator.classList.remove('load');
-            }
+//             if(indicator.classList.contains('load')){
+//                 indicator.classList.remove('load');
+//             }
 
-        })
+//         })
 
-        if (loadAnimationindex >= loadingOverlayIndicator.length) {
-            loadAnimationindex = 0;
-        }
-        loadingOverlayIndicator[loadAnimationindex].classList.add('load');
-        loadAnimationindex++
-    },700)
-}
+//         if (loadAnimationindex >= loadingOverlayIndicator.length) {
+//             loadAnimationindex = 0;
+//         }
+//         loadingOverlayIndicator[loadAnimationindex].classList.add('load');
+//         loadAnimationindex++
+//     },700)
+// }
 // End Deffine Functions 
