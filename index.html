@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="its ahmed shehata portflio page">
+    <!-- set bootstrap -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/bootstrap-icon/bootstrap-icons.min.css">
+    <!-- setting up style sheets -->
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>My Portoflio</title>
+</head>
+<body>
+    <div class="loadingOverlay" id="loadingOverlay">
+        <h4 class="loadingText display-6">Loading ..</h4>
+        <ul class="loadingIndicator">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <header class="mainSiteHeader">
+        <section class="container-fluid">
+            <button class="toggle-Navigation" type="button" role="menubar" id="togglerBTN">
+                <span role="menuicon"></span>
+                <span role="menuicon"></span>
+                <span role="menuicon"></span>
+            </button>
+            <h1 class="logo display-6 text-uppercase" id="logoText">My Portoflio</h1>
+        </section>
+    </header>
+    <!-- start navbar -->
+    <aside class="navigationnBar" id="navbar">
+        <ul class="mainNavgationTabs">
+            <li class="list-item">
+                <a class="nav-links" href="#home">
+                    <span class="item-icon">
+                        <i class="bi bi-house display-6"></i>
+                    </span>
+                    <span class="item-discription">
+                        <h4>Home</h4>
+                    </span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="nav-links" href="#about">
+                    <span class="item-icon">
+                        <i class="bi bi-file-person display-6"></i>
+                    </span>
+                    <span class="item-discription">
+                        <h4>About</h4>
+                    </span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="nav-links" href="#services">
+                    <span class="item-icon">
+                        <i class="bi bi-book display-6"></i>
+                    </span>
+                    <span class="item-discription">
+                        <h4>Services</h4>
+                    </span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="nav-links" href="#gallery">
+                    <span class="item-icon">
+                        <i class="bi bi-images display-6"></i>
+                    </span>
+                    <span class="item-discription">
+                        <h4>Gallery</h4>
+                    </span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="nav-links" href="#contacts">
+                    <span class="item-icon">
+                        <i class="bi bi-chat-left-dots display-6"></i>
+                    </span>
+                    <span class="item-discription">
+                        <h4>Contacts</h4>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- End navbar -->
+    <!-- Start home -->
+    <section class="home" id="home">
+        <main class="container gap-2">
+            <div class="welcomeheading row justify-content-center">
+                <article class="col-8 col-md-5">
+                    <div class="my-protoflio-img">
+
+                        <img class="myImage" src="assets/images/personal-ing/ahmed-shehata.webp" alt="profile-img">
+                    </div>
+                </article>
+                <article class="col-8 col-md-5">
+                    <h4 class="headingtext">Hello Dear Customer. In my Portoflio <span class="fw-bold">i'm ahmed shehata</span> </h4>
+                    <p class="text-muted">
+                        I am a frontend - web developer, and labels in the future to be full stack developer and my goal is the best programmer in my country
+                    </p>
+                    <button type="button" class="hire">Hire me</button>
+                </article>
+            </div>
+            <div class="scrollToTop">
+                <i class="bi bi-arrow-up"></i>
+            </div>
+        </main>
+    </section>
+    <!-- End home -->
+    <!-- Start About -->
+    <section class="about" id="about">
+        <div class="container">
+            <main class="row gap-2">
+                <article class="information col-10 col-md-5">
+                    <div class="myInformationCard card">
+                        <h3 class=" card-header text-uppercase display-6 fw-bold"> about me</h3>
+                        <img src="assets/images/personal-ing/ahmed-shehata.webp" alt="my-protoflio-img" class="card-image-top">
+                        <section class="card-body">
+                            <h4 class="card-title text-uppercase">Ahmed Shehata</h4>
+                            <div class="card-text">
+                                <span>frontend - web developer</span><br>
+                                From alexsandria , Egypt <br>
+                                The level of education is a diploma graduate specialized decoration .
+                            </div>
+                        </section>
+                    </div>
+                </article>
+                <article class="skillsList col-10 col-md-5">
+                    <h3 class="skills-header text-uppercase display-6 fw-bold">my skills</h3>
+                    <section class="technologes">
+                        <div class="html">
+                            <label>HTML & HTML5</label>
+                            <div class="progress">
+                                <span class="progess-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-progressbar-name="html" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</span>
+                            </div>
+                        </div>
+                        <div class="CSS-CSS3">
+                            <label>CSS & CSS3</label>
+                            <div class="progress">
+                                <span class="progess-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-progressbar-name="css&css3" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100">83%</span>
+                            </div>
+                        </div>
+                        <div class="javascript">
+                            <label>Javascript</label>
+                            <div class="progress">
+                                <span class="progess-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-progressbar-name="javascript" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</span>
+                            </div>
+                        </div>
+                        <div class="bootstrap">
+                            <label>Bootstrap</label>
+                            <div class="progress">
+                                <span class="progess-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-progressbar-name="bootstrap" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100">57%</span>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </main>
+        </div>
+    </section>
+    <!-- end About -->
+    <!-- Start Services -->
+    <section class="services" id="services">
+        <main class="container">
+            <div class="servicesList">
+                <article class="serviceBox">
+                    <div class="servIco">
+                        <img src="assets/images/services/card01.png" alt="service 01">
+                    </div>
+                    <div class="servDescriptionBody">
+                        <header class="serheading">
+                            <h4>create awesome projects</h4>
+                        </header>
+                        <p>i've some awesome web application projects created by me and With some help friends </p>
+                        <a href="https://github.com/AhmedShehata98?tab=repositories" class="serButton" role="button">more ..</a>
+                    </div>
+                </article>
+                <article class="serviceBox">
+                    <div class="servIco">
+                        <img src="assets/images/services/card03.png" alt="service 03">
+                    </div>
+                    <div class="servDescriptionBody">
+                        <header class="serheading">
+                            <h4>create a personal landing pages</h4>
+                        </header>
+                        <p>create a good websites for your product or your bussniss  . </p>
+                        <a href="https://github.com/AhmedShehata98?tab=repositories" class="serButton" role="button">more ..</a>
+                    </div>
+                </article>
+                <article class="serviceBox">
+                    <div class="servIco">
+                        <img src="assets/images/services/card02.png" alt="service 02">
+                    </div>
+                    <div class="servDescriptionBody">
+                        <header class="serheading">
+                            <h4>covert your design to real website</h4>
+                        </header>
+                        <p>I have a good experience in converting designs to the program and then gorgeous stake if your design is from PSD or Scetch type.</p>
+                        <a href="https://github.com/AhmedShehata98?tab=repositories" class="serButton" role="button">more ..</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </section>
+    <!-- End Services -->
+    <!-- start Gallery -->
+    <section class="gallery" id="gallery">
+        <main class="container-fluid">
+            <div class="projects" id="InnerLocation">
+                <article class="showMoreBox" id="showMoreBTN">
+                    <div class="showMoreIco">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </div>
+                    <h5 class="text-uppercase" >Load More ...</h5>
+                </article>
+ 
+            </div>
+        </main>
+    </section>
+    <!-- End Gallery -->
+    <!-- start contacts -->
+    <section class="contacts" id="contacts">
+        <main class="container">
+            <article class="mainCard">
+                <div class="row">
+                    <div class="col-12 col-md-6 address">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <h5>elhadara Elgegeda , alexsandria, egypt</h5>
+                    </div>
+                    <div class="col-12 col-md-6 ContactNumbers">
+                        <span class="phoneNumber">
+                            <i class="bi bi-telephone-fill"></i>
+                            <small class="fs-5">+2001559021655</small>
+                        </span>
+                        <span class="whatsapp">
+                            <i class="bi bi-whatsapp"></i>
+                            <small class="fs-5">+2001096019665</small>
+                        </span>
+                    </div>
+                    <div class="col-12 socail-media">
+                        <a href="https://www.facebook.com/MidoEsquire/" class="facebook">
+                            <i class="bi bi-facebook"></i>
+                            /Mido Esquire
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahmed-shehata-b63001225/" class="linkedin">
+                            <i class="bi bi-linkedin"></i>
+                            /AhmedShehata-b63001225
+                        </a>
+                        <a href="https://github.com/AhmedShehata98" class="github">
+                            <i class="bi bi-github"></i>
+                            /AhmedShehata98
+                        </a>
+                        <a href="mailto:ahmedshehataq98@gmail.com" class="email">
+                            <i class="bi bi-envelope-open-fill"></i>
+                            /ahmedshehataq98@gmail.com</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </section>
+    <!-- End contacts -->
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/master.js"></script>
+</body>
+</html>
