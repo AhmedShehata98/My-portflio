@@ -9,12 +9,14 @@ let loadAnimationindex=0;
 
 
 let sideNavbar    = document.querySelector('#navbar'),
-logoText        = document.querySelector('#logoText'),
-sideListItem    = document.querySelectorAll('#navbar li'),
-togglerButton = document.querySelector('#togglerBTN'),
+logoText          = document.querySelector('#logoText'),
+sideListItem      = document.querySelectorAll('#navbar li'),
+togglerButton     = document.querySelector('#togglerBTN'),
 innerProjectLocation = document.querySelector('#InnerLocation'),
-showMoreBTN = document.querySelector('#showMoreBTN'),
-scrollToTopBTN = document.querySelector('.scrollToTop');
+showMoreBTN       = document.querySelector('#showMoreBTN'),
+scrollToTopBTN    = document.querySelector('.scrollToTop'),
+sectionsPages     = document.querySelectorAll('body section[data-parent]');
+
 // End Deffine variables
 
 
@@ -38,66 +40,89 @@ window.addEventListener('resize',()=>{
     CheckForPageDir();
 })
 
-
 window.addEventListener('scroll',()=>{
-    if (window.scrollY >= 0) {
-        searchForActiveAndRemove();
+    sectionsPages.forEach(section =>{
+        const secTop = section.offsetTop - 200;
+        const secHeight = section.offsetHeight;
+        const secIDs    = section.getAttribute('id');
 
-        logoText.textContent= 'home';
-        sideListItem[0].classList.add('active');
-    }
+        // console.log(secTop + ' ' + secHeight +' '+ secIDs);
 
-    if(window.scrollY >= 404){
-        searchForActiveAndRemove();
-
-
-        // Start to disable fade animation
-        document.querySelector('.myInformationCard').style.transform= 'translateY(0)';
-        document.querySelector('.myInformationCard').style.opacity= '1';
-        document.querySelector('.skillsList').style.transform= 'translateY(0)';
-        document.querySelector('.skillsList').style.opacity= '1';
-        // 
-        logoText.textContent= 'about';
-        sideListItem[1].classList.add('active');
-        scrollToTopBTN.classList.add('visable-scroll-btn')
-    }else{
-        scrollToTopBTN.classList.remove('visable-scroll-btn')
-
-    }
-
-    if (window.scrollY >= 1021) {
-        searchForActiveAndRemove();
-
+        if (window.scrollY >= secTop && window.scrollY < (secHeight + secTop) ) {
+            searchForActiveAndRemove();
+            addActiveOnTarget(secIDs);
+            logoText.textContent= secIDs;
 
         // Start to disable fade animation
-        document.querySelector('.servicesList >:first-child').style.transform= 'translateY(0)';
-        document.querySelector('.servicesList >:first-child').style.opacity= '1';
+        document.querySelector(`#${secIDs}`).classList.add('fadeDiabled')
 
-        document.querySelector('.servicesList >:nth-child(2)').style.transform= 'translateY(0)';
-        document.querySelector('.servicesList >:nth-child(2)').style.opacity= '1';
-        
-        document.querySelector('.servicesList >:last-child').style.transform= 'translateY(0)';
-        document.querySelector('.servicesList >:last-child').style.opacity= '1';
-        // 
-        logoText.textContent= 'services';
-        sideListItem[2].classList.add('active');
-    }
-    if (window.scrollY >= 1632) {
-        searchForActiveAndRemove();
-        logoText.textContent= 'gallery';
-        sideListItem[3].classList.add('active');
-    }
-    if (window.scrollY >= 2269) {
-        searchForActiveAndRemove();
+        }
 
-        // Start to disable fade animation
-        document.querySelector('.mainCard').style.transform= 'translateY(0)';
-        document.querySelector('.mainCard').style.opacity= '1';
-        // 
-        logoText.textContent= 'contacts';
-        sideListItem[4].classList.add('active');
-    }
+    })
+
 })
+
+
+// window.addEventListener('scroll',()=>{
+
+//     if (window.scrollY >= homePage.scrollHeight) {
+//         searchForActiveAndRemove();
+
+//         logoText.textContent= 'home';
+//         sideListItem[0].classList.add('active');
+//     }
+
+//     if(window.scrollY >= aboutPage.scrollHeight){
+//         searchForActiveAndRemove();
+
+
+//         // Start to disable fade animation
+//         document.querySelector('.myInformationCard').style.transform= 'translateY(0)';
+//         document.querySelector('.myInformationCard').style.opacity= '1';
+//         document.querySelector('.skillsList').style.transform= 'translateY(0)';
+//         document.querySelector('.skillsList').style.opacity= '1';
+//         // 
+//         logoText.textContent= 'about';
+//         sideListItem[1].classList.add('active');
+//         scrollToTopBTN.classList.add('visable-scroll-btn')
+//     }else{
+//         scrollToTopBTN.classList.remove('visable-scroll-btn')
+
+//     }
+
+//     if (window.scrollY >= servicesPage.scrollHeight) {
+//         searchForActiveAndRemove();
+
+
+//         // Start to disable fade animation
+//         document.querySelector('.servicesList >:first-child').style.transform= 'translateY(0)';
+//         document.querySelector('.servicesList >:first-child').style.opacity= '1';
+
+//         document.querySelector('.servicesList >:nth-child(2)').style.transform= 'translateY(0)';
+//         document.querySelector('.servicesList >:nth-child(2)').style.opacity= '1';
+        
+//         document.querySelector('.servicesList >:last-child').style.transform= 'translateY(0)';
+//         document.querySelector('.servicesList >:last-child').style.opacity= '1';
+//         // 
+//         logoText.textContent= 'services';
+//         sideListItem[2].classList.add('active');
+//     }
+//     if (window.scrollY >= galleryPage.scrollHeight) {
+//         searchForActiveAndRemove();
+//         logoText.textContent= 'gallery';
+//         sideListItem[3].classList.add('active');
+//     }
+//     if (window.scrollY >= contactsPage.scrollHeight) {
+//         searchForActiveAndRemove();
+
+//         // Start to disable fade animation
+//         document.querySelector('.mainCard').style.transform= 'translateY(0)';
+//         document.querySelector('.mainCard').style.opacity= '1';
+//         // 
+//         logoText.textContent= 'contacts';
+//         sideListItem[4].classList.add('active');
+//     }
+// })
 
 showMoreBTN.addEventListener('click',()=>{
     if(classCount >= projectsList.length){
@@ -153,6 +178,14 @@ function searchForActiveAndRemove(){
     })
 }
 
+function addActiveOnTarget(id){
+
+    Array.from(document.querySelectorAll('#navbar  ul  li  a')).forEach(link =>{
+        if(link.href.split('#')[1] === id){
+            link.parentElement.classList.add('active');
+        }
+    });
+}
 
 
 
