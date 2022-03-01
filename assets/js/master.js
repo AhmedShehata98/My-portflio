@@ -1,6 +1,4 @@
 // Start Deffine variables
-let apiurl = 'https://github.com/AhmedShehata98/My-Portfolio/blob/4adde531b81dc995d31ced7da004b0f3e61dd9b5/projects.json';
-
 
 // Assistant variables
 let classCount = 4;
@@ -255,6 +253,7 @@ function CheckForPageDir(){
         sideNavbar.classList.remove('smallMediaEn');
     }
 }
+
 
 // loadingOverlay disabled now
 

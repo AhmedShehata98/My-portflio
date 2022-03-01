@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="its ahmed shehata portflio page">
     <meta name="theme-color" content="#360d00">
+
     <!-- set bootstrap -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/bootstrap-icon/bootstrap-icons.min.css">
     <!-- setting up style sheets -->
     <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <title>My Portoflio</title>
 </head>
 <body>
@@ -106,7 +108,7 @@
                     <p class="text-muted">
                         I am a frontend - web developer, and labels in the future to be full stack developer and my goal is the best programmer in my country
                     </p>
-                    <button type="button" class="hire">Hire me</button>
+                    <a href="#contacts" type="button" class="hire">Hire me</a>
                 </article>
             </div>
             <div class="scrollToTop">
@@ -227,42 +229,80 @@
     <!-- End Gallery -->
     <!-- start contacts -->
     <section class="contacts" data-parent="section"  id="contacts">
-        <main class="container">
-            <article class="mainCard">
-                <div class="row">
-                    <div class="col-12 col-md-6 address">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <h5>elhadara Elgegeda , alexsandria, egypt</h5>
+        <main class="container mt-5">
+            <div class="row  mt-5">
+                <form class="MessageForm mt-5" action="https://smartforms.dev/submit/621e489f7a195017922de8e3" method="POST">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label text-light" for="firstName">First Name</label>
+                            <input class="form-control" type="text" name="firstName" placeholder="ex : Ahmed" id="firstName" required>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <label class="form-label text-light" for="lastName">Last Name</label>
+                            <input class="form-control" type="text" name="lastName" placeholder="ex : Shehata" id="lastName" required>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6 ContactNumbers">
-                        <span class="phoneNumber">
-                            <i class="bi bi-telephone-fill"></i>
-                            <small class="fs-5">+2001559021655</small>
-                        </span>
-                        <span class="whatsapp">
-                            <i class="bi bi-whatsapp"></i>
-                            <small class="fs-5">+2001096019665</small>
-                        </span>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label text-light" for="Email">Email Address</label>
+                            <input class="form-control" type="email" name="email" placeholder="name@example.com" id="Email" required>
+                        </div>
                     </div>
-                    <div class="col-12 socail-media">
-                        <a href="https://www.facebook.com/MidoEsquire/" class="facebook">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Your Message Here .." name="messageArea" id="MessageInput" ></textarea>
+                                <label class="floatingTextArea" for="MessageInput">Message</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="actionBTN col">
+                            <button type="submit">Send</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <article class="generalInformation col-12 col-md-6">
+                    
+                    <h5><i class="bi bi-geo-alt-fill"></i><span>address :</span> alexsandria, egypt</h5>
+                    <ul class="phoneNumber">phone number
+                        <li><i class="bi bi-whatsapp"></i> +20-01096019665</li>
+                        <li><i class="bi bi-telephone-fill"></i> +20-01559021655</li>
+                    </ul>
+                </article>
+                <article class="contactLinks col-12 col-md-6">
+                    <ul class="mainContactLinks">
+                        <li class="facebook">
                             <i class="bi bi-facebook"></i>
-                            /Mido Esquire
-                        </a>
-                        <a href="https://www.linkedin.com/in/ahmed-shehata-b63001225/" class="linkedin">
+                            <a href="https://www.facebook.com/MidoEsquire/">
+                                /Mido Esquire
+                            </a>
+                        </li>
+                        <li class="linkedin">
                             <i class="bi bi-linkedin"></i>
-                            /AhmedShehata-b63001225
-                        </a>
-                        <a href="https://github.com/AhmedShehata98" class="github">
+                            <a href="https://www.linkedin.com/in/ahmed-shehata-b63001225/">
+                                /AhmedShehata-b63001225
+                            </a>
+                        </li>
+                        <li class="github">
                             <i class="bi bi-github"></i>
-                            /AhmedShehata98
-                        </a>
-                        <a href="mailto:ahmedshehataq98@gmail.com" class="email">
+                            <a href="https://github.com/AhmedShehata98">
+                                /AhmedShehata98
+                            </a>
+                        </li>
+                        <li class="Email">
                             <i class="bi bi-envelope-open-fill"></i>
-                            /ahmedshehataq98@gmail.com</a>
-                    </div>
-                </div>
-            </article>
+                            <a href="mailto:ahmedshehataq98@gmail.com">
+                                /ahmedshehataq98@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+                
+            </div>
         </main>
     </section>
     <!-- End contacts -->
