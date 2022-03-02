@@ -9,7 +9,10 @@
 
     <!-- set bootstrap -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/bootstrap-icon/bootstrap-icons.min.css">
+    <!-- ionic-icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <!-- setting up style sheets -->
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/main.min.css">
@@ -41,9 +44,9 @@
     <aside class="navigationnBar" id="navbar">
         <ul class="mainNavgationTabs">
             <li class="list-item">
-                <a class="nav-links" href="#home">
+                <a class="nav-links" data-name="home" href="#">
                     <span class="item-icon">
-                        <i class="bi bi-house display-6"></i>
+                        <ion-icon name="home" class="display-6"></ion-icon>
                     </span>
                     <span class="item-discription">
                         <h4>Home</h4>
@@ -51,9 +54,9 @@
                 </a>
             </li>
             <li class="list-item">
-                <a class="nav-links" href="#about">
+                <a class="nav-links" data-name="about" href="#">
                     <span class="item-icon">
-                        <i class="bi bi-file-person display-6"></i>
+                        <ion-icon name="person-circle" class="display-6"></ion-icon>
                     </span>
                     <span class="item-discription">
                         <h4>About</h4>
@@ -61,9 +64,9 @@
                 </a>
             </li>
             <li class="list-item">
-                <a class="nav-links" href="#services">
+                <a class="nav-links" data-name="services" href="#">
                     <span class="item-icon">
-                        <i class="bi bi-book display-6"></i>
+                        <ion-icon name="help-circle" class="display-6"></ion-icon>
                     </span>
                     <span class="item-discription">
                         <h4>Services</h4>
@@ -71,9 +74,9 @@
                 </a>
             </li>
             <li class="list-item">
-                <a class="nav-links" href="#gallery">
+                <a class="nav-links" data-name="gallery" href="#">
                     <span class="item-icon">
-                        <i class="bi bi-images display-6"></i>
+                        <ion-icon name="grid" class="display-6"></ion-icon>
                     </span>
                     <span class="item-discription">
                         <h4>Gallery</h4>
@@ -81,9 +84,9 @@
                 </a>
             </li>
             <li class="list-item">
-                <a class="nav-links" href="#contacts">
+                <a class="nav-links" data-name="contacts" href="#">
                     <span class="item-icon">
-                        <i class="bi bi-chat-left-dots display-6"></i>
+                        <ion-icon name="chatbox" class="display-6"></ion-icon>
                     </span>
                     <span class="item-discription">
                         <h4>Contacts</h4>
@@ -97,14 +100,14 @@
     <section class="home" data-parent="section"  id="home">
         <main class="container gap-2">
             <div class="welcomeheading row justify-content-center">
-                <article class="col-8 col-md-5">
+                <article class="col-8 col-lg-5">
                     <div class="my-protoflio-img">
 
                         <img class="myImage" src="assets/images/personal-ing/ahmed-shehata.webp" alt="profile-img">
                     </div>
                 </article>
-                <article class="col-8 col-md-5">
-                    <h4 class="headingtext">Hello Dear Customer. In my Portoflio <br><span class="fw-bold">i'm ahmed shehata</span> </h4>
+                <article class="col-8 col-lg-6">
+                    <h4 class="headingtext">Hello Dear Customer In my Portoflio <br><span class="fw-bold">i'm ahmed shehata</span> </h4>
                     <p class="text-muted">
                         I am a frontend - web developer, and labels in the future to be full stack developer and my goal is the best programmer in my country
                     </p>
@@ -112,7 +115,7 @@
                 </article>
             </div>
             <div class="scrollToTop">
-                <i class="bi bi-arrow-up"></i>
+                <ion-icon name="arrow-up-outline"></ion-icon>
             </div>
         </main>
     </section>
@@ -121,7 +124,7 @@
     <section class="about" data-parent="section"  id="about">
         <div class="container">
             <main class="row gap-2">
-                <article class="information col-10 col-md-5">
+                <article class="information col-10 col-lg-5">
                     <div class="myInformationCard card">
                         <h3 class=" card-header text-uppercase display-6 fw-bold"> about me</h3>
                         <img src="assets/images/personal-ing/ahmed-shehata.webp" alt="my-protoflio-img" class="card-image-top">
@@ -135,7 +138,7 @@
                         </section>
                     </div>
                 </article>
-                <article class="skillsList col-10 col-md-5">
+                <article class="skillsList col-10 col-lg-5">
                     <h3 class="skills-header text-uppercase display-6 fw-bold">my skills</h3>
                     <section class="technologes">
                         <div class="html">
@@ -218,7 +221,7 @@
             <div class="projects" id="InnerLocation">
                 <article class="showMoreBox" id="showMoreBTN">
                     <div class="showMoreIco">
-                        <i class="bi bi-arrow-clockwise"></i>
+                        <ion-icon name="eye-outline"></ion-icon>
                     </div>
                     <h5 class="text-uppercase" >Load More ...</h5>
                 </article>
@@ -258,8 +261,8 @@
                     </div>
                     <div class="row">
                         <div class="actionBTN col">
-                            <button type="submit">Send</button>
-                            <button type="reset">Reset</button>
+                            <button type="submit"><ion-icon name="send-outline"></ion-icon></button>
+                            <button type="reset"><ion-icon name="trash-outline"></ion-icon></button>
                         </div>
                     </div>
                 </form>
@@ -267,36 +270,36 @@
             <div class="row">
                 <article class="generalInformation col-12 col-md-6">
                     
-                    <h5><i class="bi bi-geo-alt-fill"></i><span>address :</span> alexsandria, egypt</h5>
+                    <h5><ion-icon name="map-outline"></ion-icon><span>address :</span> alexsandria, egypt</h5>
                     <ul class="phoneNumber">phone number
-                        <li><i class="bi bi-whatsapp"></i> +20-01096019665</li>
-                        <li><i class="bi bi-telephone-fill"></i> +20-01559021655</li>
+                        <li><ion-icon name="logo-whatsapp"></ion-icon> +20-01096019665</li>
+                        <li><ion-icon name="call-outline"></ion-icon> +20-01559021655</li>
                     </ul>
                 </article>
                 <article class="contactLinks col-12 col-md-6">
                     <ul class="mainContactLinks">
                         <li class="facebook">
-                            <i class="bi bi-facebook"></i>
+                            <ion-icon name="logo-facebook"></ion-icon>
                             <a href="https://www.facebook.com/MidoEsquire/">
-                                /Mido Esquire
+                                <p>/Mido Esquire</p>
                             </a>
                         </li>
                         <li class="linkedin">
-                            <i class="bi bi-linkedin"></i>
+                            <ion-icon name="logo-linkedin"></ion-icon>
                             <a href="https://www.linkedin.com/in/ahmed-shehata-b63001225/">
-                                /AhmedShehata-b63001225
+                                <p>/AhmedShehata-b63001225</p>
                             </a>
                         </li>
                         <li class="github">
-                            <i class="bi bi-github"></i>
+                            <ion-icon name="logo-github"></ion-icon>
                             <a href="https://github.com/AhmedShehata98">
-                                /AhmedShehata98
+                                <p>/AhmedShehata98</p>
                             </a>
                         </li>
                         <li class="Email">
-                            <i class="bi bi-envelope-open-fill"></i>
+                            <ion-icon name="logo-google"></ion-icon>
                             <a href="mailto:ahmedshehataq98@gmail.com">
-                                /ahmedshehataq98@gmail.com
+                                <p>/ahmedshehataq98@gmail.com</p>
                             </a>
                         </li>
                     </ul>
@@ -308,6 +311,6 @@
     <!-- End contacts -->
     <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
     <script src="assets/js/vendor/projects.js"></script>
-    <script src="assets/js/master.js"></script>
+    <script src="assets/js/master.min.js"></script>
 </body>
 </html>
