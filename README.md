@@ -12,9 +12,17 @@
   - [x] HTML . :white_check_mark:
   - [x] CSS .  :white_check_mark:
   - [x] JS .   :white_check_mark:
+  - [x] Typescript .   :white_check_mark:
   - [x] SASS . :white_check_mark:
   - [x] Bootstrap .  :white_check_mark:
-  - [ ] angular or react or Vue . :stopwatch:
+  - [x] Tailwind css . :white_check_mark:
+  - [x] React JS . :white_check_mark:
+  - [x] Redux toolkit . :white_check_mark:
+  - [x] React query . :white_check_mark:
+  - [x] Vue JS . :white_check_mark:
+  - [x] Vuex . :white_check_mark:
+  - [x] Pinia . :white_check_mark:
+  - [ ] Rust . ⏱️:
   
 
 
